@@ -1,0 +1,17 @@
+<%= form_for(@fretboard) do |f| %>
+  <% if @fretboard.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fretboard.errors.count, "error") %> prohibited this fretboard from being saved:</h2>
+
+      <ul>
+      <% @fretboard.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

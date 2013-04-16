@@ -1,0 +1,25 @@
+<h1>Listing fretboards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Artist Name</th>
+      <th>Number Of Tabs</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fretboards.each do |fretboard| %>
+    <tr>
+      <td><%= fretboard.artist_name %></td>
+      <td><%= fretboard.number_of_tabs %></td>
+      <td><%= link_to 'Edit', edit_fretboard_path(fretboard) %></td>
+      <td><%= link_to 'Destroy', fretboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Fretboard', new_fretboard_path %>
