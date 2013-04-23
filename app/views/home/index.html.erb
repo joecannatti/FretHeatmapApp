@@ -1,4 +1,7 @@
 <div class="fretboard">
+  <div class="selector">
+    <select id="fretboard_selector"></select>
+  </div>
   <% (0..24).each do |fret_num| %>
     <div class="fret fret-<%= fret_num %>">
       <% (0..5).each do |str_num| %>
@@ -12,10 +15,11 @@
 </div>
 
 <script>
-  fretboards = new FretHeatmapApp.Collections.FretboardsCollection()
-  fretboards.reset(<%= @fretboards.to_json.html_safe %>)
+  fretboards = new FretHeatmapApp.Collections.FretboardsCollection();
+  fretboards.reset(<%= @fretboards.to_json.html_safe %>);
+
   new FretHeatmapApp.Views.Fretboard({
     collection: fretboards,
     el: $(".fretboard")
-  }).render()
+  }).render();
 </script>
