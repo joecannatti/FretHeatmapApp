@@ -1,9 +1,14 @@
 <div class="fretboard">
   <div class="selector">
-    <select id="fretboard_selector"></select>
+    <div class="cut">
+      <select id="fretboard_selector"></select>
+    </div>
   </div>
   <% (0..24).each do |fret_num| %>
     <div class="fret fret-<%= fret_num %>">
+      <div class="roman-numeral">
+        <div><%= fret_num %></div>
+      </div>
       <% (0..5).each do |str_num| %>
         <div class="string string-<%= str_num %>">
           <div class="dot">

@@ -14,10 +14,20 @@ class FretHeatmapApp.Views.Fretboard extends Backbone.View
         @frets[string_number][fret_number] = new FretHeatmapApp.Views.Fret(el: $('.fret-' + fret_number + ' .string-' + string_number))
         @frets[string_number][fret_number].render()
 
+  board: =>
+    @collection.get($('#fretboard_selector').val())
+
+
+  max: =>
+    max = 0
+    $(@board().attributes.probability).each (string_number) ->
+      for fret_number in [0..24]
+        max = Math.max(@[fret_number], max)
+    max
+
   render: =>
     self = @
-    board = @collection.get($('#fretboard_selector').val())
-    $(board.attributes.probability).each (string_number) ->
+    $(@board().attributes.probability).each (string_number) ->
       for fret_number in [0..24]
-        self.frets[string_number][fret_number].probability = @[fret_number]
+        self.frets[string_number][fret_number].probability = (@[fret_number] / self.max())
         self.frets[string_number][fret_number].render()

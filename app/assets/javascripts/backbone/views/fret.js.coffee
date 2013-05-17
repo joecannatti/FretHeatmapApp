@@ -3,6 +3,4 @@ class FretHeatmapApp.Views.Fret extends Backbone.View
   className: 'fret'
   probability: 0
   render: =>
-    $(@el).find('.dot').animate({opacity: @probability * 25}, 800, ->
-      console.log('ani')
-    )
+    $(@el).find('.dot').animate({opacity: @probability}, 800)
