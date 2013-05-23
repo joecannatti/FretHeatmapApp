@@ -3,16 +3,41 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .header {
-  background-image: url(image_path('black-Linen.png'));
-  vertical-align: middle;
   h1 {
-    text-shadow: 1px 2px 2px #555;
-    color: #000;
+    color: #D33;
     font-size: 90px;
     font-family: head;
     margin: 0;
     padding-left: 10px;
     padding-top: 20px;
+  }
+
+  .nav {
+    background-color: #D33;
+    text-align: left;
+
+    .button {
+      display: inline-block;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      margin: 0;
+      font: 24px/100% head;
+      padding: 10px;
+      color: black;
+    }
+    .button.current {
+      text-decoration: none;
+      color: #D33;
+      background-color: black;
+    }
+    .button:hover {
+      @extend .button.current;
+    }
+    .button:active {
+      position: relative;
+      top: 1px;
+    }
   }
 }
 
@@ -22,27 +47,6 @@
   margin-right: auto;
   text-align: center;
 
-  .nav {
-    background-color: #D33;
-    text-align: left;
-    .button {
-      color: black;
-      display: inline-block;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      font: 14px/100% head;
-      padding: .5em 2em .55em;
-      text-shadow: 0 1px 1px rgba(0,0,0,.3);
-    }
-    .button:hover {
-      text-decoration: none;
-    }
-    .button:active {
-      position: relative;
-      top: 1px;
-    }
-  }
 
   .selector {
     margin-bottom: 20px;
@@ -50,9 +54,6 @@
     background-color: #000;
     min-height: 50px;
     text-align: center;
-    -moz-box-shadow: 2px 2px 3px #222;
-    -webkit-box-shadow: 2px 2px 2px #222;
-    box-shadow: 2px 2px 3px #333;
 
     p {
       text-align: left;

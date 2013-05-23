@@ -2,9 +2,11 @@ body {
   margin: 0;
   .header {
     min-height: 150px;
-    background-color: #333;
     margin: 0;
     padding: 0;
+    /* background-image: url(image_path('black-Linen.png')); */
+    background-color: black;
+    vertical-align: middle;
   }
 }
 @font-face {

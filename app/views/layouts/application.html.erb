@@ -11,6 +11,12 @@
 
   <div class="header">
     <h1>Fretboard Heatmaps</h1> 
+    <div class="nav">
+      <%= link_to "HEATMAPS", root_path, class: "button " + class_for_action("index") %>
+      <%= link_to "ABOUT", about_path, class: "button " + class_for_action("about") %>
+      <%= link_to "CONTACT", contact_path, class: "button " + class_for_action("contact") %>
+      <%= link_to "PUPPY SOUND SOFTWARE", "http://puppysound.com", class: "button" %>
+    </div>
   </div>
 
   <%= yield %>
