@@ -1,23 +1,35 @@
 <div class="fretboard">
   <div class="selector">
-    <p>Choose an artist:</p>
-    <div class="cut">
-      <select id="fretboard_selector"></select>
+    <div class="center">
+      <p>Choose an artist:</p>
+      <div class="cut">
+        <select id="fretboard_selector"></select>
+      </div>
     </div>
   </div>
-  <% (0..24).each do |fret_num| %>
-    <div class="fret fret-<%= fret_num %>">
-      <div class="roman-numeral">
-        <div><%= fret_num %></div>
-      </div>
-      <% (0..5).each do |str_num| %>
-        <div class="string string-<%= str_num %>">
-          <div class="dot">
-          </div>
-        </div>
-      <% end %>
+  <div class="sidebar">
+    <div class="stripe">
+      <h3>Welcome to Fretboard Heatmaps!</h3>
+      <hr/>
+      <p>This graph shows how often guitar players and bands play each note on the guitar. Select an artist above. The darker the red dot on the graph, the more often they play that note.</p>
     </div>
-  <% end %>
+  </div>
+
+  <div class="main">
+    <% (0..24).each do |fret_num| %>
+      <div class="fret fret-<%= fret_num %>">
+        <div class="roman-numeral">
+          <div><%= fret_num %></div>
+        </div>
+        <% (0..5).each do |str_num| %>
+          <div class="string string-<%= str_num %>">
+            <div class="dot">
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <script>
