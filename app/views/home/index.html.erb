@@ -1,21 +1,23 @@
 <div class="fretboard">
   <div class="selector">
-    <div class="center">
-      <p>Choose an artist:</p>
+    <div class="<%= mobile_device? ? "" : "center" %>">
+      <p>Choose an artist</p>
       <div class="cut">
         <select id="fretboard_selector"></select>
       </div>
     </div>
   </div>
-  <div class="sidebar">
-    <div class="stripe">
-      <h3>Welcome to Fretboard Heatmaps!</h3>
-      <hr/>
-      <p>This graph shows how often guitar players and bands play each note on the guitar. Select an artist above. The darker the red dot on the graph, the more often they play that note.</p>
+  <% unless mobile_device? %>
+    <div class="sidebar">
+      <div class="stripe">
+        <h3>Welcome to Fretboard Heatmaps!</h3>
+        <hr/>
+        <p>This graph shows how often guitar players and bands play each note on the guitar. Select an artist above. The darker the red dot on the graph, the more often they play that note.</p>
+      </div>
     </div>
-  </div>
+  <% end %>
 
-  <div class="main">
+  <div class="main <%= mobile_device? ? "mobile" : "" %>">
     <% (0..24).each do |fret_num| %>
       <div class="fret fret-<%= fret_num %>">
         <div class="roman-numeral">

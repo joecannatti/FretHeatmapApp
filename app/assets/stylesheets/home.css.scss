@@ -89,6 +89,17 @@
     width: 500px;
   }
 
+  .main.mobile {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .main.mobile .fret .string {
+    width: 100px;
+    height: 100px;
+  }
+
 
   .selector {
     margin-bottom: 20px;
@@ -164,4 +175,19 @@
       }
     }
   }
+}
+
+#mobile_app .selector{
+  min-height: 130px;
+}
+
+#mobile_app .selector p{
+  display: inline;
+  font-size: 55pt;
+}
+
+#mobile_app .selector select{
+  display: inline;
+  font-size: 55pt;
+  float: right;
 }
