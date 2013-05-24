@@ -12,7 +12,6 @@ Bundler.require(*Rails.groups(assets: %w(development test)))
 
 module FretHeatmapApp
   class Application < Rails::Application
-    config.assets.enabled = false
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
