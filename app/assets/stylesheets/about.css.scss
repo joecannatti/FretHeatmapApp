@@ -1,0 +1,40 @@
+.content {
+  text-align: center;
+  width: 350px;
+  background-color: #D33;
+  padding: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  
+  .stripe {
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    display: inline-block;
+
+    h3 {
+      color: #D33;
+      font-family: head;
+      font-size: 17pt;
+    }
+
+    hr {
+      border: 0;
+      background-color: #D33;
+      height: 2px;
+      width: 80%;
+    }
+
+    p {
+      color: #D33;
+      font-family: head;
+      margin: 12px;
+      text-align: left;
+      font-size: 16pt;
+    }
+    a {
+      color: white;
+    }
+  }
+}
