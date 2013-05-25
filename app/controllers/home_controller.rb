@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
-  helper_method :class_for_action, :mobile_device?
+  helper_method :class_for_action, :mobile_device?, :ipad?, :main_id
 
   def index
     @fretboards = Fretboard.all
@@ -11,10 +11,16 @@ class HomeController < ApplicationController
   end
 
   def mobile_device?
-    if session[:mobile_param]
-      session[:mobile_param] == "1"
-    else
-      request.user_agent =~ /Mobile|webOS/
-    end
+    request.user_agent =~ /Mobile|webOS/ && (not ipad?)
+  end
+
+  def ipad?
+    request.user_agent =~ /iPad/
+  end
+
+  def main_id
+    return "mobile_app" if mobile_device?
+    return "ipad_app" if ipad?
+    return ""
   end
 end
