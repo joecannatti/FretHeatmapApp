@@ -100,6 +100,11 @@
     height: 100px;
   }
 
+  .main.mobile .fret .string {
+    width: 60px;
+    height: 60px;
+  }
+
 
   .selector {
     margin-bottom: 20px;
@@ -197,4 +202,22 @@
 }
 #ipad_app .fretboard .sidebar {
     width: 210px;
+}
+#embeded_app .selector{
+  min-height: 100px;
+}
+
+#embeded_app .selector p{
+  display: inline;
+  font-size: 40pt;
+}
+
+#embeded_app .selector select{
+  display: inline;
+  font-size: 40pt;
+  float: right;
+}
+#embeded_app .roman-numeral {
+    font-size: 20px;
+    width: 35px;
 }

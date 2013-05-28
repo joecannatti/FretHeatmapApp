@@ -17,7 +17,7 @@
     </div>
   <% end %>
 
-  <div class="main <%= mobile_device? ? "mobile" : "" %>">
+  <div class="main <%= embeded? ? "embeded" : "" %> <%= mobile_device? ? "mobile" : "" %>">
     <% (0..24).each do |fret_num| %>
       <div class="fret fret-<%= fret_num %>">
         <div class="roman-numeral">
