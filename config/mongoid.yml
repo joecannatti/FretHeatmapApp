@@ -1,7 +1,6 @@
 production:
   clients:
     default:
-      database: fret_heatmap_app_production
       uri: <%= ENV['MONGODB_URI'] %>
 
 development:
