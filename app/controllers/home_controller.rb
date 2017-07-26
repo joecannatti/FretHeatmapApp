@@ -4,6 +4,8 @@ class HomeController < ApplicationController
 
   def index
     @fretboards = Fretboard.all
+    p @fretboards
+    @fretboards
   end
 
   def embed

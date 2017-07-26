@@ -1,6 +1,6 @@
 class FretboardsController < ApplicationController
   before_action :set_fretboard, only: [:show, :edit, :update, :destroy]
-  respond_to :json, :html
+  include ActionView::Rendering
 
   # GET /fretboards
   def index

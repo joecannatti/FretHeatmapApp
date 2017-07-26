@@ -36,8 +36,14 @@
 
 <script>
   fretboards = new FretHeatmapApp.Collections.FretboardsCollection();
-  fretboards.reset(<%= @fretboards[0..10].to_json.html_safe %>);
-
+  data = <%= @fretboards.to_json.html_safe %>;
+  $(data).each(function(index,f) {
+      console.log(f._id.$oid);
+      f._id = f._id.$oid;
+      console.log(f);
+  });
+  fretboards.reset(data);
+  console.log(fretboards);
   new FretHeatmapApp.Views.Fretboard({
     collection: fretboards,
     el: $(".fretboard")
